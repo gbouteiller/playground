@@ -1,0 +1,18 @@
+{
+  "name": "playground",
+  "packageManager": "pnpm@8.1.1",
+  "prettier": "@pg/config-prettier",
+  "scripts": {
+    "build": "turbo build",
+    "clean": "rm -rf node_modules",
+    "clean:workspaces": "turbo clean",
+    "dev": "turbo dev"
+  },
+  "dependencies": {
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.1",
+    "@pg/config-prettier": "workspace:*",
+    "eslint-config-pg": "workspace:*",
+    "turbo": "^1.9.3"
+  }
+}

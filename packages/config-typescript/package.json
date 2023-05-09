@@ -1,0 +1,10 @@
+{
+  "name": "@pg/config-typescript",
+  "version": "1.0.0",
+  "main": "tsconfig.json",
+  "type": "module",
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules"
+  }
+}

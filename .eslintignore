@@ -1,0 +1,32 @@
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# testing
+coverage
+
+# apps
+dist
+
+# production
+build
+
+# misc
+.DS_Store
+*.pem
+Thumbs.db
+.thumbs.db
+
+# debug
+.pnpm-debug.log*
+
+# local env files
+.env
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# turbo
+.turbo

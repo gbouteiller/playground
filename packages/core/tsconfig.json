@@ -1,0 +1,7 @@
+{
+  "extends": "@pg/config-typescript/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "."
+  },
+  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@pg/core",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.ts",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "devDependencies": {
+    "@pg/config-typescript": "workspace:*"
+  },
+  "dependencies": {
+    "zod": "^3.21.4"
+  }
+}
