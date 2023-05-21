@@ -1,0 +1,17 @@
+name: Notion2Astro
+author: gbouteiller
+description: Export Notion to Astro
+inputs:
+  CONTENT_PATH: 
+    description: Content path
+    required: true
+  NOTION_PAGE_ID:
+    description: Notion Page ID
+    required: true
+  NOTION_SECRET:
+    description: Notion API Token secret
+    required: true
+
+runs:  
+  using: node16
+  main: dist/action.js
