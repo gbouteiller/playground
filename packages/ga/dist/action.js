@@ -1,6 +1,6 @@
 import {
   run
-} from "./chunk-O4NASVUE.js";
+} from "./chunk-DOYLFRCE.js";
 
 // src/action.ts
 import * as core from "@actions/core";

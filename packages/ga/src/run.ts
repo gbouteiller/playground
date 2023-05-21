@@ -55,8 +55,10 @@ export async function run({contentPath, logger = console, notionPageId, notionSe
   }
 
   async function writeFiles(files: File[]) {
-    const entries = await fs.readdir(contentPath, { withFileTypes: true });
-    await Promise.all(entries.filter((entry) => entry.isDirectory()).map((dir) => fs.rm(dir.path, {recursive: true, force: true})));
+    const entries = await fs.readdir(contentPath, {withFileTypes: true});
+    await Promise.all(
+      entries.filter((entry) => entry.isDirectory()).map(({name}) => fs.rm(`${contentPath}/${name}`, {recursive: true, force: true}))
+    );
     return Promise.all(
       files.map(async ({content, path: p}) => {
         await fs.mkdir(path.dirname(p), {recursive: true});
