@@ -6,15 +6,6 @@ import path from 'node:path';
 import {NotionToMarkdown} from 'notion-to-md';
 import {z} from 'zod';
 
-async function writeFiles(files: File[]) {
-  return Promise.all(
-    files.map(async ({content, path: p}) => {
-      await fs.mkdir(path.dirname(p), {recursive: true});
-      await fs.writeFile(p, content, 'utf8');
-    })
-  );
-}
-
 function isChildDatabaseBlock(block: z.infer<typeof zBlock>): block is z.infer<typeof zBlockChildDatabase> {
   return block.type === 'child_database';
 }
@@ -61,6 +52,17 @@ export async function run({contentPath, logger = console, notionPageId, notionSe
       return valueFrom(properties.slug);
     }
     if (type !== 'formula') return r[type];
+  }
+
+  async function writeFiles(files: File[]) {
+    const entries = await fs.readdir(contentPath, { withFileTypes: true });
+    await Promise.all(entries.filter((entry) => entry.isDirectory()).map((dir) => fs.rm(dir.path, {recursive: true, force: true})));
+    return Promise.all(
+      files.map(async ({content, path: p}) => {
+        await fs.mkdir(path.dirname(p), {recursive: true});
+        await fs.writeFile(p, content, 'utf8');
+      })
+    );
   }
 
   logger.info('Fetching collections...');
