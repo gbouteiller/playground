@@ -13,6 +13,6 @@
     "@changesets/cli": "^2.26.1",
     "@pg/config-prettier": "workspace:*",
     "eslint-config-pg": "workspace:*",
-    "turbo": "^1.9.3"
+    "turbo": "^1.9.8"
   }
 }

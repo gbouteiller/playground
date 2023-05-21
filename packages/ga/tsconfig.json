@@ -1,0 +1,3 @@
+{
+  "extends": "@pg/config-typescript/tsconfig.json"
+}

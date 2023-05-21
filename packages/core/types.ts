@@ -1,4 +1,4 @@
 import type {z} from "zod";
-import {zPost} from "./schemas";
+import {zGithubEntry} from "./to-externalise";
 
-export type Post = z.infer<typeof zPost>;
+export type Entry = z.infer<typeof zGithubEntry>;

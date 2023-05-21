@@ -1,7 +1,29 @@
 ---
 import Layout from '$/app/layout.astro';
+import { getCollection } from 'astro:content';
+
+const works = await getCollection('works');
 ---
 
 <Layout>
-  <h1>Astro</h1>
+  <div class="table-container">
+    <table class="table-hover table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          works.map(({data, id}) => (
+            <tr>
+              <td>{id}</td>
+              <td>{JSON.stringify(data)}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
 </Layout>

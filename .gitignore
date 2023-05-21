@@ -30,3 +30,6 @@ Thumbs.db
 
 # turbo
 .turbo
+
+apps/skeleton-basic
+apps/skeleton-houdini
